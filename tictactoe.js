@@ -2,7 +2,6 @@ const grid = document.querySelector('#grid-container');
 const tiles = grid.querySelectorAll('.tile');
 const reset = document.querySelector(".btn");
 
-
 let turn = 1;
 
 let board = [
