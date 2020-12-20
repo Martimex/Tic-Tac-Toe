@@ -1,5 +1,7 @@
 const grid = document.querySelector('#grid-container');
 const tiles = grid.querySelectorAll('.tile');
+const reset = document.querySelector(".btn");
+
 
 let turn = 1;
 
@@ -30,6 +32,20 @@ function isDraw()
 {
     (turn === 10)? document.getElementById("winner").innerText = "Draw!" : "";
 }
+
+reset.addEventListener('click', (e) => {
+    turn = 1;
+    //p1moves.splice(0);  Would it work??
+    //p2moves.splice(0);  Would it work??
+    
+    for(let j=0; j<=2; j++)
+    {
+        for(let k=0; k<=2; k++)
+        {
+          board[j][k] = "";
+        }
+    }
+})
 
 function whoWins()
 {
