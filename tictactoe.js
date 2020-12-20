@@ -50,8 +50,7 @@ function foo(e) {
         (turn %2 === 1)? board[trgt.dataset.rows][trgt.dataset.columns] = 'x'
         : board[trgt.dataset.rows][trgt.dataset.columns] = 'o';
 
-        let num = ((parseInt(trgt.dataset.rows)) * (parseInt(trgt.dataset.rows)+1) 
-        + (parseInt(trgt.dataset.columns)+1));
+        let num = ((parseInt(trgt.dataset.rows)) * 3 + (parseInt(trgt.dataset.columns)+1));
 
         if(trgt.dataset.rows == 1) {num++;}
 
