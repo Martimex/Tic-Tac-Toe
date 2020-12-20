@@ -1,0 +1,39 @@
+*
+{
+    background: #222;
+}
+
+#grid-container
+{
+    display: grid;
+    grid-template-columns: repeat(3, 10.2em);
+    column-gap: 0.3em;
+    row-gap: 0.3em;
+}
+
+.tile
+{
+    border: 1px solid #fff;
+    height: 10em;
+    width: 10em;
+    cursor:pointer;
+}
+
+.tile:hover
+{
+    background: #444;
+}
+
+.icon-circle-empty, .icon-cancel
+{
+    color: white;
+    height: 10em;
+    width: 10em;
+}
+
+#winner
+{
+    font-size: 20px;
+    color: white;
+    padding: 1.4em;
+}
