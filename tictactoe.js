@@ -67,8 +67,6 @@ function foo(e) {
 
         let num = ((parseInt(trgt.dataset.rows)) * 3 + (parseInt(trgt.dataset.columns)+1));
 
-        if(trgt.dataset.rows == 1) {num++;}
-
         if(turn %2 === 1) {p1moves.push(num); turn++; checkResult(p1moves);}
         else {p2moves.push(num); turn++; checkResult(p2moves);}
     }
