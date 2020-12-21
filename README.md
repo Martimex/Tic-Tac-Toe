@@ -11,3 +11,8 @@ Changelog:
 -Added 'Reset button' and necessary functionality to
 reset the current state of the game without a need to 
 refresh webpage.
+
+[21.12.2020]
+-Minor adjustments with cross & circle icons positioning.
+Now they are vertically and horizontally centered within
+their tile. 
