@@ -13,10 +13,14 @@
 
 .tile
 {
+    display:flex;
     border: 1px solid #fff;
     height: 10em;
     width: 10em;
     cursor:pointer;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .tile:hover
@@ -36,4 +40,22 @@
     font-size: 20px;
     color: white;
     padding: 1.4em;
+    float:left;
+}
+
+.btn > button
+{
+    height:3em;
+    width:6em;
+    margin: 1.4em;
+    color: white;
+    position:absolute; left: 25em;
+}
+
+.btn > button:hover
+{
+    background: #fff;
+    cursor: pointer;
+    color: #222;
+    font-weight: 700;
 }
