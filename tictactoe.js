@@ -1,5 +1,6 @@
 const grid = document.querySelector('#grid-container');
 const tiles = grid.querySelectorAll('.tile');
+const reset = document.querySelector(".btn");
 
 let turn = 1;
 
@@ -31,6 +32,27 @@ function isDraw()
     (turn === 10)? document.getElementById("winner").innerText = "Draw!" : "";
 }
 
+reset.addEventListener('click', (e) => {
+    turn = 1;
+    //p1moves.splice(0);  Would it work??
+    //p2moves.splice(0);  Would it work??
+
+    p1moves = [];
+    p2moves = [];
+
+    tiles.forEach(tile => tile.classList.remove("icon-cancel", "icon-circle-empty"));
+    tiles.forEach(tile => tile.addEventListener('click', foo)); 
+    document.querySelector("#winner").innerText = "Winner: none"; 
+    
+    for(let j=0; j<=2; j++)
+    {
+        for(let k=0; k<=2; k++)
+        {
+          board[j][k] = "";
+        }
+    }
+})
+
 function whoWins()
 {
     (turn%2 === 1)? document.getElementById("winner").innerText = "Circle wins!" 
@@ -50,14 +72,10 @@ function foo(e) {
         (turn %2 === 1)? board[trgt.dataset.rows][trgt.dataset.columns] = 'x'
         : board[trgt.dataset.rows][trgt.dataset.columns] = 'o';
 
-        let num = ((parseInt(trgt.dataset.rows)) * (parseInt(trgt.dataset.rows)+1) 
-        + (parseInt(trgt.dataset.columns)+1));
-
-        if(trgt.dataset.rows == 1) {num++;}
+        let num = ((parseInt(trgt.dataset.rows)) * 3 + (parseInt(trgt.dataset.columns)+1));
 
         if(turn %2 === 1) {p1moves.push(num); turn++; checkResult(p1moves);}
         else {p2moves.push(num); turn++; checkResult(p2moves);}
     }
 
 }
-
