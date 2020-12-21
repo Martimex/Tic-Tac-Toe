@@ -36,6 +36,13 @@ reset.addEventListener('click', (e) => {
     turn = 1;
     //p1moves.splice(0);  Would it work??
     //p2moves.splice(0);  Would it work??
+
+    p1moves = [];
+    p2moves = [];
+
+    tiles.forEach(tile => tile.classList.remove("icon-cancel", "icon-circle-empty"));
+    tiles.forEach(tile => tile.addEventListener('click', foo)); 
+    document.querySelector("#winner").innerText = "Winner: none"; 
     
     for(let j=0; j<=2; j++)
     {
@@ -72,4 +79,3 @@ function foo(e) {
     }
 
 }
-
